@@ -17,9 +17,9 @@ Welcome to Chatbook !! How would you like to proceed ?
         elif user_input == "2":
             self.Signin()
         elif user_input == "3":
-            pass
+            self.my_post()
         elif user_input == "4":
-            pass
+            self.sending()
         else:
             exit()
     def Signup(self):
@@ -42,7 +42,25 @@ Welcome to Chatbook !! How would you like to proceed ?
             else:
                 print("please input correct credentials") 
         print("\n")
-        self.menu()       
+        self.menu()   
+    def my_post(self):
+        if self.loggedin == True:
+            txt = input("enter your post here -> ")
+            print(f"following content has been posted -> {txt}")
+        else:
+            print("you need to signin first to post something....")
+        print("\n")
+        self.menu()  
+    def sending(self):
+        if self.loggedin == True :
+            txt = input("enter your message here -> ")
+            frnd = input("whom to send the msg -> ")
+            print(f"your message has been sent to {frnd}")
+        else:
+            print("you need to signin first to send the message")
+        print("\n")
+        self.menu()
+
                 
 
 obj = Chatbook()                               
