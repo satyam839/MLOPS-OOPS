@@ -1,9 +1,24 @@
 class Chatbook:
+    __user_id = 0
     def __init__(self):
+        # here name is encapsulated or hidden attribute 
+        self.__name = "Default User"
+        self.id = Chatbook.__user_id
+        Chatbook.__user_id+=1
         self.username = ""
         self.password = ""
         self.loggedin = False
-        self.menu()
+        #self.menu()
+    def getter(self):
+        return self.__name
+    def setter(self,value):
+        self.__name = value
+    @staticmethod
+    def get_ter():
+        return Chatbook.__user_id
+    @staticmethod
+    def set_ter(valu):
+        Chatbook.__user_id = valu
     def menu(self):
         user_input = input("""
 Welcome to Chatbook !! How would you like to proceed ?
@@ -63,4 +78,5 @@ Welcome to Chatbook !! How would you like to proceed ?
 
                 
 
-obj = Chatbook()                               
+obj = Chatbook()         
+                     

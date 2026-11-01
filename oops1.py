@@ -14,3 +14,7 @@ class Employee:
 sam = Employee()
 print(sam.designation,sam.id,sam.salary)
 sam.travel("Bodhgaya")
+print(id(sam))
+# you can create attribute outside class as well
+sam.name = "satyam kumar"
+print(sam.name)
